@@ -45,7 +45,7 @@ async function checkCells() : Promise<void> {
     if (cells[combinations[i][0]].textContent === cells[combinations[i][1]].textContent 
      && cells[combinations[i][0]].textContent === cells[combinations[i][2]].textContent
      && cells[combinations[i][0]].textContent !== '') {
-      if (values[combinations[i][0]] === 1) {
+      if ((values[combinations[i][0]] === 1 && botsStep ) || (values[combinations[i][0]] === 2 && !botsStep)) {
         alert('You won!')
       } else {
         alert('Your opponent won!')
