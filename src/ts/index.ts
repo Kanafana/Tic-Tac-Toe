@@ -30,7 +30,7 @@ cells.forEach( (e) => {
 
     ;++step
     botsStep = !botsStep
-    element!.textContent = (step % 2) ? 'X' : 'O'
+    element!.textContent = (step % 2) ? '×' : 'O'
     if (step >= 5) await checkCells()
     moveAI()
   })
@@ -64,7 +64,7 @@ function start() : void {
 
 function checkCellsValues() : number[] {
   let tmp : number[] = []
-  cells.forEach(e=>tmp.push(e.textContent==='X'?1:e.textContent==='O'?2:0)) // filter values
+  cells.forEach(e=>tmp.push(e.textContent==='×'?1:e.textContent==='O'?2:0)) // filter values
   return tmp
 }
 
@@ -95,7 +95,7 @@ async function moveAI() : Promise<void> {
     case 0:
       ++step
       botsStep = !botsStep
-      cells[4].textContent = (step % 2) ? 'X' : 'O'
+      cells[4].textContent = (step % 2) ? '×' : 'O'
     break
 
     case 1:
@@ -110,7 +110,7 @@ async function moveAI() : Promise<void> {
 
       ++step
       botsStep = !botsStep
-      cells[a].textContent = (step % 2) ? 'X' : 'O'
+      cells[a].textContent = (step % 2) ? '×' : 'O'
     break
 
     case 2:
@@ -126,7 +126,7 @@ async function moveAI() : Promise<void> {
 
       ++step
       botsStep = !botsStep
-      cells[a].textContent = (step % 2) ? 'X' : 'O'
+      cells[a].textContent = (step % 2) ? '×' : 'O'
     break
 
     case 3:
@@ -136,7 +136,7 @@ async function moveAI() : Promise<void> {
       if ( (vals[2] === 2 || vals[6] === 2) && (vals[4] === 1 && vals[8] === 1) ) {
         ;++step
         botsStep = !botsStep
-        cells[0].textContent = (step % 2) ? 'X' : 'O'
+        cells[0].textContent = (step % 2) ? '×' : 'O'
         return
       }
 
@@ -161,7 +161,7 @@ async function moveAI() : Promise<void> {
       if (cells[a] && cells[a].textContent === '') { // if is clear front block of last step
         ;++step
         botsStep = !botsStep
-        cells[a].textContent = (step % 2) ? 'X' : 'O'
+        cells[a].textContent = (step % 2) ? '×' : 'O'
         return
       }
 
@@ -184,7 +184,7 @@ async function moveAI() : Promise<void> {
       if (cells[a] && cells[a].textContent === '') { // if is clear front block of last step
         ;++step
         botsStep = !botsStep
-        cells[a].textContent = (step % 2) ? 'X' : 'O'
+        cells[a].textContent = (step % 2) ? '×' : 'O'
         return
       }
 
@@ -197,7 +197,7 @@ async function moveAI() : Promise<void> {
         if (cells[maybe[lastStep]] && cells[maybe[lastStep]].textContent === '') { // if is clear front block of last step
           ;++step
           botsStep = !botsStep
-          cells[maybe[lastStep]].textContent = (step % 2) ? 'X' : 'O'
+          cells[maybe[lastStep]].textContent = (step % 2) ? '×' : 'O'
           return 
         }
       } 
@@ -223,7 +223,7 @@ async function moveAI() : Promise<void> {
         ;++step
         botsStep = !botsStep
         done = true
-        element.textContent = (step % 2) ? 'X' : 'O'
+        element.textContent = (step % 2) ? '×' : 'O'
       }
     break
 
@@ -248,7 +248,7 @@ async function moveAI() : Promise<void> {
       if (cells[a] && cells[a].textContent === '') { // if is clear front block of last step
         ;++step
         botsStep = !botsStep
-        cells[a].textContent = (step % 2) ? 'X' : 'O'
+        cells[a].textContent = (step % 2) ? '×' : 'O'
         return checkCells()
       }
 
@@ -272,7 +272,7 @@ async function moveAI() : Promise<void> {
       if (cells[a] && cells[a].textContent === '') { // if is clear front block of last step
         ;++step
         botsStep = !botsStep
-        cells[a].textContent = (step % 2) ? 'X' : 'O'
+        cells[a].textContent = (step % 2) ? '×' : 'O'
         return checkCells()
       }
 
@@ -285,7 +285,7 @@ async function moveAI() : Promise<void> {
         ;++step
         botsStep = !botsStep
         done = true
-        element.textContent = (step % 2) ? 'X' : 'O'
+        element.textContent = (step % 2) ? '×' : 'O'
         if (step >= 5) checkCells()
       }
     break
