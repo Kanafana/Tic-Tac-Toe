@@ -130,8 +130,18 @@ async function moveAI() : Promise<void> {
     break
 
     case 3:
+      // Check on 1.01 fix - array 6
+      let vals : number[] = checkCellsValues()
+
+      if ( (vals[2] === 2 || vals[6] === 2) && (vals[4] === 1 && vals[8] === 1) ) {
+        ;++step
+        botsStep = !botsStep
+        cells[0].textContent = (step % 2) ? 'X' : 'O'
+        return
+      }
+
       // Check, has our player chance to win. If yes, prevent it.
-      let tmpArray : number[] = filterCellsValues(values, 1)
+      let tmpArray : number[] = filterCellsValues(values, 1)     
       let tmpIntgr : number = 0
       a = 9
 
